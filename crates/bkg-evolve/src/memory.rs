@@ -32,6 +32,18 @@ pub struct Attempt {
     pub lesson: String,
     #[serde(default)]
     pub origin: String,
+    /// Why the agent turn ended — "Answered" after one turn without tool
+    /// calls is the honest signature of a model that talked instead of
+    /// worked, and the journal must say so.
+    #[serde(default)]
+    pub stop_reason: String,
+    /// How many model responses the attempt took.
+    #[serde(default)]
+    pub turns: u32,
+    /// The agent's own final words — evidence for the operator, never the
+    /// verdict.
+    #[serde(default)]
+    pub answer: String,
 }
 
 /// The archive for one home.
@@ -134,7 +146,8 @@ impl AttemptArchive {
                  - **branch**: `{branch}`\n\
                  - **fitness**: build {build}, {passed} tests ({failed} failed), \
                  {clippy} clippy-warnungen, {secs}s\n\
-                 - **lehre**: {lesson}\n\n",
+                 - **lehre**: {lesson}\n\
+                 - **agent**: {turns} runde(n), stopp {stop_reason}\n\n",
                 id = attempt.id,
                 verdict = attempt.verdict.as_str(),
                 goal = attempt.goal,
@@ -145,6 +158,8 @@ impl AttemptArchive {
                 clippy = attempt.fitness.clippy_warnings,
                 secs = attempt.fitness.duration_secs,
                 lesson = attempt.lesson,
+                turns = attempt.turns,
+                stop_reason = attempt.stop_reason,
             ));
         }
         std::fs::write(dir.join("journal.md"), journal).map_err(|e| e.to_string())

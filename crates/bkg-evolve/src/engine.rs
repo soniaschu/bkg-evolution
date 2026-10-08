@@ -270,6 +270,9 @@ pub async fn run_cycle(dir: &Path, goal: &str, options: &EvolveOptions) -> Resul
         fitness: report.clone(),
         lesson: lesson.clone(),
         origin: options.origin.clone().unwrap_or_default(),
+        stop_reason: format!("{:?}", run.stop_reason),
+        turns: run.turns.len() as u32,
+        answer: answer.clone(),
     };
     archive.record(attempt)?;
 
