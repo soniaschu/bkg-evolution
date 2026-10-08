@@ -129,9 +129,19 @@ pub async fn run_cycle(dir: &Path, goal: &str, options: &EvolveOptions) -> Resul
     let home = bkgclaw_store::home_root();
     let archive = AttemptArchive::new(&home);
 
-    // 1 — GUARD: repo, branch, snapshot. The branch exists even on
-    // failure; forensics beats tidiness.
+    // 1 — GUARD: repo, clean tree, branch, snapshot. The branch exists
+    // even on failure; forensics beats tidiness — but a dirty tree
+    // cannot be forensics: a commit would sweep the operator's half-
+    // finished work into the attempt and misattribute it forever.
     gitops::init(dir)?;
+    let dirty = gitops::dirty_files(dir);
+    if !dirty.is_empty() {
+        return Err(format!(
+            "der baum ist nicht sauber ({} datei(en), z. b. `{}`) — erst committen, dann evolven.              ein evolve-commit würde fremde arbeit dem versuch zuschreiben.",
+            dirty.len(),
+            dirty.first().map(String::as_str).unwrap_or("?"),
+        ));
+    }
     if let Some(origin) = &options.origin {
         gitops::remote_add_origin(dir, origin)?;
     }
@@ -346,5 +356,33 @@ mod tests {
             bkgclaw_core::tools::Decision::Deny
         );
         let _ = bkgclaw_core::tools::Risk::Destructive;
+    }
+}
+
+#[cfg(test)]
+mod clean_tree_tests {
+    use super::*;
+
+    #[test]
+    fn a_dirty_tree_refuses_to_evolve() {
+        let dir = tempfile::tempdir().unwrap().keep();
+        // Dirty: init creates the baseline commit, then we add a file.
+        gitops::init(&dir).unwrap();
+        std::fs::write(dir.join("halbe-arbeit.txt"), "nicht meins").unwrap();
+        // run_cycle needs a model — but the guard fires before any model
+        // is touched, so a bare call must fail on dirtiness, not on
+        // "kein modell". (tokio not available here: the guard is
+        // synchronous at the top of run_cycle, so a spawned runtime
+        // still fails before the registry is built.)
+        let outcome = {
+            let rt = tokio::runtime::Builder::new_current_thread()
+                .build()
+                .expect("test-runtime");
+            rt.block_on(async { run_cycle(&dir, "test", &EvolveOptions::default()).await })
+        };
+        let error = outcome.unwrap_err();
+        assert!(error.contains("nicht sauber"), "{error}");
+        assert!(error.contains("datei(en)"), "die meldung zählt: {error}");
+        let _ = std::fs::remove_dir_all(&dir);
     }
 }
