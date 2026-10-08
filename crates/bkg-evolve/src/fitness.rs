@@ -243,6 +243,19 @@ test result: FAILED. 1 passed; 1 failed; 0 ignored";
     }
 
     #[test]
+    fn a_failed_test_build_is_named_as_such_not_as_zero_failures() {
+        let fitness = FitnessReport {
+            build_ok: true,
+            tests_ok: false,
+            tests_failed: 0,
+            ..Default::default()
+        };
+        let lesson = crate::memory::lesson_for("ziel", Verdict::Reverted, &fitness);
+        assert!(lesson.contains("test-bau schlug fehl"), "{lesson}");
+        assert!(!lesson.contains("0 test(s) rot"), "{lesson}");
+    }
+
+    #[test]
     fn clippy_warning_lines_are_counted_not_guessed() {
         let output = "\
 warning: unused variable: `x`

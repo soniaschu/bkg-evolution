@@ -186,8 +186,13 @@ pub fn lesson_for(goal: &str, verdict: Verdict, fitness: &FitnessReport) -> Stri
             "{goal}: zurückgerollt — {}.",
             if !fitness.build_ok {
                 "bauen kaputt".to_string()
-            } else {
+            } else if fitness.tests_failed > 0 {
                 format!("{} test(s) rot", fitness.tests_failed)
+            } else {
+                // cargo test exited non-zero without counting a single
+                // test: the test build itself failed. "0 rot" would read
+                // as "nothing was wrong".
+                "test-bau schlug fehl (kein test lief)".to_string()
             }
         ),
     }
@@ -220,6 +225,9 @@ mod tests {
             },
             lesson: lesson.to_string(),
             origin: String::new(),
+            stop_reason: "Answered".to_string(),
+            turns: 1,
+            answer: String::new(),
         }
     }
 
