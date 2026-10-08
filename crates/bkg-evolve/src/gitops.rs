@@ -185,4 +185,17 @@ mod tests {
         assert!(branch(&dir, "-b").is_err());
         let _ = std::fs::remove_dir_all(&dir);
     }
+
+    #[test]
+    fn head_short_gives_a_short_id() {
+        let dir = repo("short_id");
+        init(&dir).unwrap();
+        // Create a file and commit it to have a HEAD.
+        std::fs::write(dir.join("test.txt"), "content").unwrap();
+        add_all(&dir).unwrap();
+        commit(&dir, "initial commit").unwrap();
+        let short = head_short(&dir).unwrap();
+        assert_eq!(short.len(), 7, "head_short should return exactly 7 characters");
+        let _ = std::fs::remove_dir_all(&dir);
+    }
 }
