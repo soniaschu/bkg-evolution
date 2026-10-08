@@ -44,24 +44,45 @@ pub enum StopReason {
 ///
 /// 1. counts a streak of byte-identical calls (name + canonical arguments)
 ///    across the whole run, not just one turn;
-/// 2. at three in a row it does not stop the run — it blocks that exact
-///    call for the rest of the run and tells the model why, giving it one
-///    chance to change its approach;
+/// 2. at the limit (default **10**, `BKGCLAW_LOOP_STREAK`) it does not
+///    stop the run — it blocks that exact call for the rest of the run
+///    and tells the model why, giving it one chance to change its approach;
 /// 3. if a blocked call comes back anyway, the run stops with
 ///    [`StopReason::LoopDetected`].
 ///
 /// Different calls reset the streak, so legitimate retries with changed
 /// arguments (the model's way of reacting to feedback) never trigger it.
-#[derive(Debug, Default)]
+#[derive(Debug)]
 pub struct LoopGuard {
     last: Option<String>,
     streak: usize,
+    limit: usize,
     blocked: std::collections::HashSet<String>,
 }
 
+impl Default for LoopGuard {
+    fn default() -> Self {
+        LoopGuard::new(limit_from_env())
+    }
+}
+
 impl LoopGuard {
+    /// A guard with an explicit limit — the tests' way in.
+    pub fn new(limit: usize) -> Self {
+        LoopGuard {
+            last: None,
+            streak: 0,
+            // A limit below 2 fires on an ordinary double-check; a broken
+            // setting must not brick the agent either way.
+            limit: limit.clamp(2, 64),
+            blocked: std::collections::HashSet::new(),
+        }
+    }
+
     /// How many identical calls in a row before the nudge-and-block.
-    pub const STREAK_LIMIT: usize = 3;
+    pub fn limit(&self) -> usize {
+        self.limit
+    }
 
     /// One model-requested call, before execution. Returns what the loop
     /// should do with it.
@@ -79,11 +100,39 @@ impl LoopGuard {
             self.last = Some(signature.clone());
         }
 
-        if self.streak >= Self::STREAK_LIMIT {
+        if self.streak >= self.limit {
             self.blocked.insert(signature);
             return LoopVerdict::Nudge;
         }
         LoopVerdict::Run
+    }
+}
+
+/// The operator's tolerance: how many identical calls in a row are allowed
+/// before the nudge. Default 10 — polling the same read-only tool a few
+/// times is a model quirk, not a runaway; the hard stop still comes before
+/// the turn ceiling.
+pub fn limit_from_env() -> usize {
+    parse_loop_streak(std::env::var("BKGCLAW_LOOP_STREAK").ok().as_deref())
+}
+
+/// Pure parsing so the default is testable without racing the process env.
+pub fn parse_loop_streak(raw: Option<&str>) -> usize {
+    match raw {
+        None => 10,
+        Some(text) => {
+            let trimmed = text.trim();
+            if trimmed.is_empty() {
+                return 10;
+            }
+            match trimmed.parse::<usize>() {
+                Ok(value) => value.clamp(2, 64),
+                // A broken setting must not brick the agent — but it must
+                // also not silently pass unnoticed: the clamp keeps the
+                // agent alive, the journal keeps the surprise.
+                _ => 10,
+            }
+        }
     }
 }
 
@@ -258,8 +307,10 @@ async fn run_inner<'a>(
     let mut leak_findings: Vec<String> = Vec::new();
     // Watches for the model asking for the same call over and over — the
     // real "stuck" signal, unlike the turn ceiling which only bounds
-    // runaway bills.
-    let mut guard = LoopGuard::default();
+    // runaway bills. The operator's tolerance comes from the environment
+    // once, per run.
+    let mut guard = LoopGuard::new(limit_from_env());
+    let loop_limit = guard.limit();
 
     for index in 0..config.max_turns {
         observer.on_turn_start(index);
@@ -366,11 +417,12 @@ async fn run_inner<'a>(
                     // approach instead of a silent kill.
                     let outcome = ToolOutcome::Denied {
                         name: call.name.clone(),
-                        reason: "LOOP — dieser exakte aufruf kam 3× hintereinander \
-                                 und ist für den rest dieses laufs blockiert. \
-                                 ändere die argumente, nimm ein anderes werkzeug, \
-                                 oder frage den menschen"
-                            .to_string(),
+                        reason: format!(
+                            "LOOP — dieser exakte aufruf kam {loop_limit}× hintereinander \
+                             und ist für den rest dieses laufs blockiert. \
+                             ändere die argumente, nimm ein anderes werkzeug, \
+                             oder frage den menschen",
+                        ),
                     };
                     messages.push(Message::tool_result(outcome.as_result_text(), call.id.clone()));
                     turn.tool_outcomes.push(outcome.clone());
@@ -959,6 +1011,41 @@ mod loop_tests {
     /// the guard exists for.
     struct Stubborn;
 
+    #[test]
+    fn the_streak_default_is_ten_and_settings_are_clamped() {
+        // The operator asked for "min 10": the default carries it, and a
+        // broken or extreme setting falls back instead of bricking.
+        assert_eq!(parse_loop_streak(None), 10);
+        assert_eq!(parse_loop_streak(Some("")), 10);
+        assert_eq!(parse_loop_streak(Some("20")), 20);
+        assert_eq!(parse_loop_streak(Some("1")), 2, "unter der clamp-grenze");
+        assert_eq!(parse_loop_streak(Some("999")), 64, "über der clamp-grenze");
+        assert_eq!(parse_loop_streak(Some("keine zahl")), 10);
+    }
+
+    #[test]
+    fn the_guard_honours_its_limit_and_blocks_after_the_nudge() {
+        // Fast variant with a small explicit limit: the run-in-test loop
+        // below covers the default elsewhere.
+        let mut guard = LoopGuard::new(3);
+        let call = || ToolCall {
+            id: "c".into(),
+            name: "task_list".into(),
+            arguments: serde_json::json!({}),
+        };
+        assert_eq!(guard.observe(&call()), LoopVerdict::Run);
+        assert_eq!(guard.observe(&call()), LoopVerdict::Run);
+        assert_eq!(guard.observe(&call()), LoopVerdict::Nudge, "der dritte wird verweigert");
+        assert_eq!(guard.observe(&call()), LoopVerdict::Stop, "der vierte stoppt");
+        // A different call is still fine — the block is per signature.
+        let other = ToolCall {
+            id: "c2".into(),
+            name: "task_list".into(),
+            arguments: serde_json::json!({ "andere": 1 }),
+        };
+        assert_eq!(guard.observe(&other), LoopVerdict::Run);
+    }
+
     #[async_trait::async_trait]
     impl crate::models::ModelProvider for Stubborn {
         fn vendor(&self) -> Vendor { Vendor::Ollama }
@@ -975,21 +1062,25 @@ mod loop_tests {
 
     #[tokio::test]
     async fn three_identical_calls_nudge_and_a_fourth_stops_the_run() {
-        // The stubborn model requests the same call every turn:
-        // call 1, 2 run; call 3 is refused with the LOOP explanation;
-        // call 4 (the blocked signature again) stops the run.
+        // The stubborn model requests the same call every turn: calls run
+        // until the streak hits the limit, the limit-th is refused with
+        // the LOOP explanation, the next one stops the run.
         let mut registry = ModelRegistry::new();
         registry.register(Box::new(Stubborn));
         let mut router = Router::new(
             &registry,
             vec![Candidate::new(ModelId::new(Vendor::Ollama, "m"), ModelPrice::default())],
         );
+        // The default limit is 10: nine calls run, the tenth is refused,
+        // the eleventh stops. The turn ceiling must not fire first.
+        let mut config = config(Policy::AllowAll);
+        config.max_turns = 40;
         let mut budget = Budget::unlimited();
         let result = run_agent_turns(
             &mut router,
             &read_only_registry(),
             &NoExecutor,
-            &config(Policy::AllowAll),
+            &config,
             &mut budget,
             vec![Message::user("tu es")],
         )
@@ -1072,7 +1163,7 @@ mod loop_tests {
 
     #[test]
     fn the_guard_counts_signatures_not_key_order() {
-        let mut guard = LoopGuard::default();
+        let mut guard = LoopGuard::new(3);
         let call = |arguments: serde_json::Value| ToolCall {
             id: "c".into(),
             name: "write_file".into(),

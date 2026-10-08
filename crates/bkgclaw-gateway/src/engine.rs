@@ -207,7 +207,10 @@ pub fn stop_message(reason: &StopReason, turns: usize, ceiling: u32) -> String {
         StopReason::LoopDetected(name) => format!(
             "der agent wiederholte denselben `{name}`-aufruf trotz sperre — lauf gestoppt. \
              der verlauf bleibt; prüfe die letzten werkzeugergebnisse und gib eine konkrete \
-             korrektur oder einen anderen auftrag"
+             korrektur oder einen anderen auftrag (toleranz: {limit}×, einstellbar über BKGCLAW_LOOP_STREAK)",
+            limit = bkgclaw_core::loop_engine::parse_loop_streak(
+                std::env::var("BKGCLAW_LOOP_STREAK").ok().as_deref()
+            ),
         ),
         StopReason::BudgetBlocked =>
             "budget erreicht — die ausgaben der sitzung stehen in der werkzeugleiste; \
