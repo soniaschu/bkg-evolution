@@ -1,0 +1,10 @@
+/home/workspace/bkg-projects/v1/bkgclaw/crates/bkgclaw-web/target/wasm32-unknown-unknown/wasm-release/deps/const_serialize-97188537015497e1.d: /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/lib.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/const_buffers.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/const_vec.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/../README.md
+
+/home/workspace/bkg-projects/v1/bkgclaw/crates/bkgclaw-web/target/wasm32-unknown-unknown/wasm-release/deps/libconst_serialize-97188537015497e1.rlib: /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/lib.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/const_buffers.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/const_vec.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/../README.md
+
+/home/workspace/bkg-projects/v1/bkgclaw/crates/bkgclaw-web/target/wasm32-unknown-unknown/wasm-release/deps/libconst_serialize-97188537015497e1.rmeta: /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/lib.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/const_buffers.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/const_vec.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/../README.md
+
+/home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/lib.rs:
+/home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/const_buffers.rs:
+/home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/const_vec.rs:
+/home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/../README.md:

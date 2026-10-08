@@ -1,0 +1,10 @@
+/home/workspace/bkg-projects/v1/bkgclaw/crates/bkgclaw-web/target/wasm-release/deps/const_serialize-25feda489f090a05.d: /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/lib.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/const_buffers.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/const_vec.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/../README.md
+
+/home/workspace/bkg-projects/v1/bkgclaw/crates/bkgclaw-web/target/wasm-release/deps/libconst_serialize-25feda489f090a05.rlib: /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/lib.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/const_buffers.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/const_vec.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/../README.md
+
+/home/workspace/bkg-projects/v1/bkgclaw/crates/bkgclaw-web/target/wasm-release/deps/libconst_serialize-25feda489f090a05.rmeta: /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/lib.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/const_buffers.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/const_vec.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/../README.md
+
+/home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/lib.rs:
+/home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/const_buffers.rs:
+/home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/const_vec.rs:
+/home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/const-serialize-0.7.2/src/../README.md:

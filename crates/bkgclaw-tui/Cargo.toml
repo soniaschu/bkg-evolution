@@ -1,0 +1,21 @@
+[package]
+name = "bkgclaw-tui"
+description = "The interactive terminal client: chat, live tool events and approvals over the gateway."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+
+[dependencies]
+bkgclaw-core = { workspace = true }
+bkgclaw-gateway = { workspace = true }
+bkgclaw-store = { workspace = true }
+crossterm = "0.29"
+futures-util = { workspace = true }
+ratatui = "0.29"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "time", "signal", "sync"] }
+tokio-tungstenite = { version = "0.27", default-features = false, features = ["rustls-tls-webpki-roots", "connect"] }

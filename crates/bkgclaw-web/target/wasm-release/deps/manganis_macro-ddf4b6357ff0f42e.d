@@ -1,0 +1,10 @@
+/home/workspace/bkg-projects/v1/bkgclaw/crates/bkgclaw-web/target/wasm-release/deps/manganis_macro-ddf4b6357ff0f42e.d: /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/manganis-macro-0.7.10/src/lib.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/manganis-macro-0.7.10/src/asset.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/manganis-macro-0.7.10/src/css_module.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/manganis-macro-0.7.10/src/ffi.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/manganis-macro-0.7.10/src/linker.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/manganis-macro-0.7.10/src/../README.md
+
+/home/workspace/bkg-projects/v1/bkgclaw/crates/bkgclaw-web/target/wasm-release/deps/libmanganis_macro-ddf4b6357ff0f42e.so: /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/manganis-macro-0.7.10/src/lib.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/manganis-macro-0.7.10/src/asset.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/manganis-macro-0.7.10/src/css_module.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/manganis-macro-0.7.10/src/ffi.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/manganis-macro-0.7.10/src/linker.rs /home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/manganis-macro-0.7.10/src/../README.md
+
+/home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/manganis-macro-0.7.10/src/lib.rs:
+/home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/manganis-macro-0.7.10/src/asset.rs:
+/home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/manganis-macro-0.7.10/src/css_module.rs:
+/home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/manganis-macro-0.7.10/src/ffi.rs:
+/home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/manganis-macro-0.7.10/src/linker.rs:
+/home/bkg/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/manganis-macro-0.7.10/src/../README.md:

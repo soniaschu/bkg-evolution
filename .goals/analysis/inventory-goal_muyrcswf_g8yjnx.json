@@ -1,0 +1,704 @@
+{
+  "taskId": "inventory-goal_muyrcswf_g8yjnx",
+  "result": {
+    "repositories": [],
+    "workspace": {
+      "root": "/home/workspace/bkg-projects/v1/bkgclaw",
+      "worktrees": [],
+      "submodules": []
+    },
+    "agents": {
+      "available": [],
+      "active": []
+    },
+    "skills": {
+      "global": [
+        {
+          "name": "bailian-managed-agent",
+          "description": ">-",
+          "triggers": [],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "bkg-rule-crafting",
+          "description": "Create and refactor BKG rules without duplication or contradictions.",
+          "triggers": [],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "intelligence-vocabulary",
+          "description": ">",
+          "triggers": [
+            "  concept. Use when writing, editing, or reviewing Intelligence docs, nav",
+            "  concept. Use when writing, editing, or reviewing Intelligence docs, nav",
+            "  for renaming code identifiers, route slugs, env vars, API fields, or"
+          ],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "bkg-labertasche",
+          "description": "German-first BKG Labertasche persona and deterministic fact-preservation contract.",
+          "triggers": [],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "bailian-gen",
+          "description": ">-",
+          "triggers": [],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "bkg-plannotator-review",
+          "description": "Visual plan and code review workflow using the local Plannotator-compatible plan engine.",
+          "triggers": [],
+          "category": "review",
+          "version": "1.0.0"
+        },
+        {
+          "name": "bailian-cli",
+          "description": ">-",
+          "triggers": [],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "copilotkit-channels",
+          "description": ">",
+          "triggers": [
+            "  the first time is not: if no Slack app exists yet, use setup-slack-channel for"
+          ],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "bailian-finetune",
+          "description": ">-",
+          "triggers": [],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "intelligence-docs",
+          "description": ">",
+          "triggers": [
+            "  Keeps the CopilotKit Intelligence landing page in sync when a new Intelligence",
+            "  feature ships or when Intelligence docs are added, renamed, or removed. Use",
+            "  when adding Intelligence capabilities, writing or moving pages under"
+          ],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "bkg-debate",
+          "description": "Visible planning and problem-solving debate with web research, three specialists, votes, Arbiter escalation and persistent reports.",
+          "triggers": [],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "copilotkit-cli",
+          "description": "\"Use for the CopilotKit CLI — `npx copilotkit@latest`. Covers proving a project's wiring with `verify` before debugging anything by hand, scaffolding with `create`, signing in and selecting a hosted Intelligence project, agent-assisted onboarding of an existing app, generating type-safe agent ids, and importing thread history. Reach for `verify` first whenever a CopilotKit app is not working.\"",
+          "triggers": [
+            "description: \"Use for the CopilotKit CLI — `npx copilotkit@latest`. Covers proving a project's wiring with `verify` before debugging anything by hand, scaffolding with `create`, signing in and selecting a hosted Intelligence project, agent-assisted onboarding of an existing app, generating type-safe agent ids, and importing thread history. Reach for `verify` first whenever a CopilotKit app is not working.\"",
+            "description: \"Use for the CopilotKit CLI — `npx copilotkit@latest`. Covers proving a project's wiring with `verify` before debugging anything by hand, scaffolding with `create`, signing in and selecting a hosted Intelligence project, agent-assisted onboarding of an existing app, generating type-safe agent ids, and importing thread history. Reach for `verify` first whenever a CopilotKit app is not working.\""
+          ],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "bkg-brain-memory",
+          "description": "Persistent project memory and task continuity.",
+          "triggers": [],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "bailian-web-search",
+          "description": ">-",
+          "triggers": [],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "bkg-supervisor",
+          "description": "Supervise configured models, tools, skills, teams, permissions and runtime policy.",
+          "triggers": [],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "bailian-model-recommend",
+          "description": ">-",
+          "triggers": [],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "bailian-protocol",
+          "description": ">-",
+          "triggers": [],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "inspector-workbench",
+          "description": ">",
+          "triggers": [
+            "  can see the overlay. Use when a CopilotKit employee asks an agent to",
+            "  can see the overlay. Use when a CopilotKit employee asks an agent to"
+          ],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "bkg-ui-browser-verification",
+          "description": "Browser-backed UI and API verification.",
+          "triggers": [
+            "name: bkg-ui-browser-verification",
+            "description: Browser-backed UI and API verification."
+          ],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "webmcp",
+          "description": "\"Decide whether a site should expose WebMCP tools to AI agents, design those tools safely, and separate verified agent-interface capability from the SEO and conversion claims no current evidence supports. Use for a WebMCP readiness review, a tool design or security check, or to adjudicate a public claim before you publish it.\"",
+          "triggers": [
+            "description: \"Decide whether a site should expose WebMCP tools to AI agents, design those tools safely, and separate verified agent-interface capability from the SEO and conversion claims no current evidence supports. Use for a WebMCP readiness review, a tool design or security check, or to adjudicate a public claim before you publish it.\"",
+            "argument-hint: \"[assess|design|implement|scaffold|verify|trial|review|claims|api] <site, flow, tool, or claim>\"",
+            "  verified: \"2026-09-06\"",
+            "  reverify_by: \"2026-12-01\""
+          ],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "oc-speaks",
+          "description": "Eigenes OpenCode-TTS-Profil über den BKG-TTS-MCP.",
+          "triggers": [],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "page-agent",
+          "description": "Browser automation and web interaction via Alibaba Page Agent MCP with vision capabilities. Use for tasks requiring headless browsing, form filling, navigation, scraping, screenshot analysis, or any web UI automation where the agent needs to see what the user sees.",
+          "triggers": [],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "bkg-task-flow",
+          "description": "Deterministic task ownership lifecycle.",
+          "triggers": [
+            "description: Deterministic task ownership lifecycle."
+          ],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "bailian-docs-llm-wiki",
+          "description": ">-",
+          "triggers": [],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "copilotkit",
+          "description": "\"Use for any CopilotKit question — adding it to an app, chat UI, frontend or server tools, generative UI, shared state, human-in-the-loop, agent frameworks (LangGraph, CrewAI, Mastra, ADK, PydanticAI, and others), the runtime, Intelligence, threads, voice, or diagnosing something that is not working. Do not answer from memory: this skill exists to point you at the current documentation and source, both of which you can read.\"",
+          "triggers": [],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "channels-setup",
+          "description": ">",
+          "triggers": [
+            "  Use when a developer wants to build their first CopilotKit Channels agent and",
+            "  Use when a developer wants to build their first CopilotKit Channels agent and"
+          ],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "bailian-sandbox",
+          "description": ">-",
+          "triggers": [],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "inspector-docs",
+          "description": ">",
+          "triggers": [
+            "  the overlay. Use when adding, changing, renaming, or removing an Inspector",
+            "  the overlay. Use when adding, changing, renaming, or removing an Inspector",
+            "  pane, tab, or overlay action in @copilotkit/web-inspector, or when editing"
+          ],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "bkg-git-safe-flow",
+          "description": "Safe status, pull, commit and push workflow.",
+          "triggers": [],
+          "category": "workspace",
+          "version": "1.0.0"
+        },
+        {
+          "name": "bkg-container-runtime",
+          "description": "Project-mounted BKG OpenCode runtime initialization.",
+          "triggers": [],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "bkg-production-readiness",
+          "description": "Production readiness assessment.",
+          "triggers": [],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "agent-cli-dev",
+          "description": "Spawns AI coding agents in isolated git worktrees. Use when the user asks to spawn or launch an agent, delegate a task to a separate agent, or parallelize development across features. Only create a worktree without starting an agent if the user explicitly wants setup only.",
+          "triggers": [
+            "description: Spawns AI coding agents in isolated git worktrees. Use when the user asks to spawn or launch an agent, delegate a task to a separate agent, or parallelize development across features. Only create a worktree without starting an agent if the user explicitly wants setup only.",
+            "description: Spawns AI coding agents in isolated git worktrees. Use when the user asks to spawn or launch an agent, delegate a task to a separate agent, or parallelize development across features. Only create a worktree without starting an agent if the user explicitly wants setup only.",
+            "description: Spawns AI coding agents in isolated git worktrees. Use when the user asks to spawn or launch an agent, delegate a task to a separate agent, or parallelize development across features. Only create a worktree without starting an agent if the user explicitly wants setup only."
+          ],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "bkg-zero",
+          "description": "Project initialization and audit - inspect repo, git, docs, build/test configuration, Brain and security boundaries before implementation.",
+          "triggers": [],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "bkg-acp",
+          "description": "ACP-aware orchestration between OpenCode and external agent clients.",
+          "triggers": [],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "bailian-train-deploy",
+          "description": "用百炼 CLI (`bl`) 走完\"数据→微调训练→导出→部署→调用\"的完整闭环，或跳过训练直接部署基座模型。支持文本模型（SFT/DPO/CPT）、音频 TTS 模型（CosyVoice）、图像生成模型（Wan2.7）和视频生成模型（Wan i2v/kf2v）微调。涵盖数据集校验/上传、创建微调任务、等待训练、导出最佳 checkpoint、创建推理部署、等待就绪、给出调用示例。当用户提到在百炼 / DashScope / 阿里云模型工作室上\"训练模型\"\"微调\"\"fine-tune\"\"finetune\"\"部署模型\"\"模型上线\"\"把微调模型跑起来/调用\"\"训练一个推理模型\"\"继续预训练\"\"LoRA/SFT/DPO 训练\"\"语音合成模型\"\"TTS 微调\"\"CosyVoice\"\"声音克隆\"\"图像生成微调\"\"文生图\"\"图生图\"\"Wan2.7\"\"图像模型训练\"\"视频生成微调\"\"图生视频\"\"首帧生视频\"\"首尾帧\"\"kf2v\"\"i2v\"\"Wan视频\"\"视频特效训练\"等，都应激活本技能——即使用户没明说\"用 bl\"，只要意图是百炼平台的",
+          "triggers": [],
+          "category": "deployment",
+          "version": "1.0.0"
+        },
+        {
+          "name": "bkg-vote-consensus",
+          "description": "Three-agent voting and Arbiter escalation.",
+          "triggers": [],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "setup-slack-channel",
+          "description": "Use for the PROVIDER half of getting a locally running CopilotKit Channels agent to answer in Slack, when no Slack app exists yet — setting up a Channels bot in Slack for the first time, creating the Slack app and its tokens, attaching it to a managed Intelligence Channel, or when a Channel reports setup_required, sits at \"Waiting for runtime\", the Channel is Online but a Slack mention gets no reply, or a Slack app was built with Socket Mode instead of an Intelligence Request URL. Scoped to an OpenTag checkout, or the OpenTag example inside a channels-sdk clone — the phases assume those conventions (app/channel.tsx, app/env.ts, INTELLIGENCE_CHANNEL_NAME, a local agent on port 8123) and do not describe a project scaffolded by copilotkit init, which already ships its own channel host. If the Slack app and Channel already exist and the question is about declaring or customising the Channel in code, use the copilotkit-channels skill instead.",
+          "triggers": [
+            "description: Use for the PROVIDER half of getting a locally running CopilotKit Channels agent to answer in Slack, when no Slack app exists yet — setting up a Channels bot in Slack for the first time, creating the Slack app and its tokens, attaching it to a managed Intelligence Channel, or when a Channel reports setup_required, sits at \"Waiting for runtime\", the Channel is Online but a Slack mention gets no reply, or a Slack app was built with Socket Mode instead of an Intelligence Request URL. Scoped to an OpenTag checkout, or the OpenTag example inside a channels-sdk clone — the phases assume those conventions (app/channel.tsx, app/env.ts, INTELLIGENCE_CHANNEL_NAME, a local agent on port 8123) and do not describe a project scaffolded by copilotkit init, which already ships its own channel host. If the Slack app and Channel already exist and the question is about declaring or customising the Channel in code, use the copilotkit-channels skill instead.",
+            "description: Use for the PROVIDER half of getting a locally running CopilotKit Channels agent to answer in Slack, when no Slack app exists yet — setting up a Channels bot in Slack for the first time, creating the Slack app and its tokens, attaching it to a managed Intelligence Channel, or when a Channel reports setup_required, sits at \"Waiting for runtime\", the Channel is Online but a Slack mention gets no reply, or a Slack app was built with Socket Mode instead of an Intelligence Request URL. Scoped to an OpenTag checkout, or the OpenTag example inside a channels-sdk clone — the phases assume those conventions (app/channel.tsx, app/env.ts, INTELLIGENCE_CHANNEL_NAME, a local agent on port 8123) and do not describe a project scaffolded by copilotkit init, which already ships its own channel host. If the Slack app and Channel already exist and the question is about declaring or customising the Channel in code, use the copilotkit-channels skill instead."
+          ],
+          "category": "other",
+          "version": "1.0.0"
+        },
+        {
+          "name": "bkg-arbitration",
+          "description": "Arbitration for unresolved BKG planning, architecture, feature and risk decisions.",
+          "triggers": [],
+          "category": "other",
+          "version": "1.0.0"
+        }
+      ],
+      "project": [],
+      "categories": {
+        "other": [
+          {
+            "name": "bailian-managed-agent",
+            "description": ">-",
+            "triggers": [],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "bkg-rule-crafting",
+            "description": "Create and refactor BKG rules without duplication or contradictions.",
+            "triggers": [],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "intelligence-vocabulary",
+            "description": ">",
+            "triggers": [
+              "  concept. Use when writing, editing, or reviewing Intelligence docs, nav",
+              "  concept. Use when writing, editing, or reviewing Intelligence docs, nav",
+              "  for renaming code identifiers, route slugs, env vars, API fields, or"
+            ],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "bkg-labertasche",
+            "description": "German-first BKG Labertasche persona and deterministic fact-preservation contract.",
+            "triggers": [],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "bailian-gen",
+            "description": ">-",
+            "triggers": [],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "bailian-cli",
+            "description": ">-",
+            "triggers": [],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "copilotkit-channels",
+            "description": ">",
+            "triggers": [
+              "  the first time is not: if no Slack app exists yet, use setup-slack-channel for"
+            ],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "bailian-finetune",
+            "description": ">-",
+            "triggers": [],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "intelligence-docs",
+            "description": ">",
+            "triggers": [
+              "  Keeps the CopilotKit Intelligence landing page in sync when a new Intelligence",
+              "  feature ships or when Intelligence docs are added, renamed, or removed. Use",
+              "  when adding Intelligence capabilities, writing or moving pages under"
+            ],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "bkg-debate",
+            "description": "Visible planning and problem-solving debate with web research, three specialists, votes, Arbiter escalation and persistent reports.",
+            "triggers": [],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "copilotkit-cli",
+            "description": "\"Use for the CopilotKit CLI — `npx copilotkit@latest`. Covers proving a project's wiring with `verify` before debugging anything by hand, scaffolding with `create`, signing in and selecting a hosted Intelligence project, agent-assisted onboarding of an existing app, generating type-safe agent ids, and importing thread history. Reach for `verify` first whenever a CopilotKit app is not working.\"",
+            "triggers": [
+              "description: \"Use for the CopilotKit CLI — `npx copilotkit@latest`. Covers proving a project's wiring with `verify` before debugging anything by hand, scaffolding with `create`, signing in and selecting a hosted Intelligence project, agent-assisted onboarding of an existing app, generating type-safe agent ids, and importing thread history. Reach for `verify` first whenever a CopilotKit app is not working.\"",
+              "description: \"Use for the CopilotKit CLI — `npx copilotkit@latest`. Covers proving a project's wiring with `verify` before debugging anything by hand, scaffolding with `create`, signing in and selecting a hosted Intelligence project, agent-assisted onboarding of an existing app, generating type-safe agent ids, and importing thread history. Reach for `verify` first whenever a CopilotKit app is not working.\""
+            ],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "bkg-brain-memory",
+            "description": "Persistent project memory and task continuity.",
+            "triggers": [],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "bailian-web-search",
+            "description": ">-",
+            "triggers": [],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "bkg-supervisor",
+            "description": "Supervise configured models, tools, skills, teams, permissions and runtime policy.",
+            "triggers": [],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "bailian-model-recommend",
+            "description": ">-",
+            "triggers": [],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "bailian-protocol",
+            "description": ">-",
+            "triggers": [],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "inspector-workbench",
+            "description": ">",
+            "triggers": [
+              "  can see the overlay. Use when a CopilotKit employee asks an agent to",
+              "  can see the overlay. Use when a CopilotKit employee asks an agent to"
+            ],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "bkg-ui-browser-verification",
+            "description": "Browser-backed UI and API verification.",
+            "triggers": [
+              "name: bkg-ui-browser-verification",
+              "description: Browser-backed UI and API verification."
+            ],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "webmcp",
+            "description": "\"Decide whether a site should expose WebMCP tools to AI agents, design those tools safely, and separate verified agent-interface capability from the SEO and conversion claims no current evidence supports. Use for a WebMCP readiness review, a tool design or security check, or to adjudicate a public claim before you publish it.\"",
+            "triggers": [
+              "description: \"Decide whether a site should expose WebMCP tools to AI agents, design those tools safely, and separate verified agent-interface capability from the SEO and conversion claims no current evidence supports. Use for a WebMCP readiness review, a tool design or security check, or to adjudicate a public claim before you publish it.\"",
+              "argument-hint: \"[assess|design|implement|scaffold|verify|trial|review|claims|api] <site, flow, tool, or claim>\"",
+              "  verified: \"2026-09-06\"",
+              "  reverify_by: \"2026-12-01\""
+            ],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "oc-speaks",
+            "description": "Eigenes OpenCode-TTS-Profil über den BKG-TTS-MCP.",
+            "triggers": [],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "page-agent",
+            "description": "Browser automation and web interaction via Alibaba Page Agent MCP with vision capabilities. Use for tasks requiring headless browsing, form filling, navigation, scraping, screenshot analysis, or any web UI automation where the agent needs to see what the user sees.",
+            "triggers": [],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "bkg-task-flow",
+            "description": "Deterministic task ownership lifecycle.",
+            "triggers": [
+              "description: Deterministic task ownership lifecycle."
+            ],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "bailian-docs-llm-wiki",
+            "description": ">-",
+            "triggers": [],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "copilotkit",
+            "description": "\"Use for any CopilotKit question — adding it to an app, chat UI, frontend or server tools, generative UI, shared state, human-in-the-loop, agent frameworks (LangGraph, CrewAI, Mastra, ADK, PydanticAI, and others), the runtime, Intelligence, threads, voice, or diagnosing something that is not working. Do not answer from memory: this skill exists to point you at the current documentation and source, both of which you can read.\"",
+            "triggers": [],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "channels-setup",
+            "description": ">",
+            "triggers": [
+              "  Use when a developer wants to build their first CopilotKit Channels agent and",
+              "  Use when a developer wants to build their first CopilotKit Channels agent and"
+            ],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "bailian-sandbox",
+            "description": ">-",
+            "triggers": [],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "inspector-docs",
+            "description": ">",
+            "triggers": [
+              "  the overlay. Use when adding, changing, renaming, or removing an Inspector",
+              "  the overlay. Use when adding, changing, renaming, or removing an Inspector",
+              "  pane, tab, or overlay action in @copilotkit/web-inspector, or when editing"
+            ],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "bkg-container-runtime",
+            "description": "Project-mounted BKG OpenCode runtime initialization.",
+            "triggers": [],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "bkg-production-readiness",
+            "description": "Production readiness assessment.",
+            "triggers": [],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "agent-cli-dev",
+            "description": "Spawns AI coding agents in isolated git worktrees. Use when the user asks to spawn or launch an agent, delegate a task to a separate agent, or parallelize development across features. Only create a worktree without starting an agent if the user explicitly wants setup only.",
+            "triggers": [
+              "description: Spawns AI coding agents in isolated git worktrees. Use when the user asks to spawn or launch an agent, delegate a task to a separate agent, or parallelize development across features. Only create a worktree without starting an agent if the user explicitly wants setup only.",
+              "description: Spawns AI coding agents in isolated git worktrees. Use when the user asks to spawn or launch an agent, delegate a task to a separate agent, or parallelize development across features. Only create a worktree without starting an agent if the user explicitly wants setup only.",
+              "description: Spawns AI coding agents in isolated git worktrees. Use when the user asks to spawn or launch an agent, delegate a task to a separate agent, or parallelize development across features. Only create a worktree without starting an agent if the user explicitly wants setup only."
+            ],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "bkg-zero",
+            "description": "Project initialization and audit - inspect repo, git, docs, build/test configuration, Brain and security boundaries before implementation.",
+            "triggers": [],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "bkg-acp",
+            "description": "ACP-aware orchestration between OpenCode and external agent clients.",
+            "triggers": [],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "bkg-vote-consensus",
+            "description": "Three-agent voting and Arbiter escalation.",
+            "triggers": [],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "setup-slack-channel",
+            "description": "Use for the PROVIDER half of getting a locally running CopilotKit Channels agent to answer in Slack, when no Slack app exists yet — setting up a Channels bot in Slack for the first time, creating the Slack app and its tokens, attaching it to a managed Intelligence Channel, or when a Channel reports setup_required, sits at \"Waiting for runtime\", the Channel is Online but a Slack mention gets no reply, or a Slack app was built with Socket Mode instead of an Intelligence Request URL. Scoped to an OpenTag checkout, or the OpenTag example inside a channels-sdk clone — the phases assume those conventions (app/channel.tsx, app/env.ts, INTELLIGENCE_CHANNEL_NAME, a local agent on port 8123) and do not describe a project scaffolded by copilotkit init, which already ships its own channel host. If the Slack app and Channel already exist and the question is about declaring or customising the Channel in code, use the copilotkit-channels skill instead.",
+            "triggers": [
+              "description: Use for the PROVIDER half of getting a locally running CopilotKit Channels agent to answer in Slack, when no Slack app exists yet — setting up a Channels bot in Slack for the first time, creating the Slack app and its tokens, attaching it to a managed Intelligence Channel, or when a Channel reports setup_required, sits at \"Waiting for runtime\", the Channel is Online but a Slack mention gets no reply, or a Slack app was built with Socket Mode instead of an Intelligence Request URL. Scoped to an OpenTag checkout, or the OpenTag example inside a channels-sdk clone — the phases assume those conventions (app/channel.tsx, app/env.ts, INTELLIGENCE_CHANNEL_NAME, a local agent on port 8123) and do not describe a project scaffolded by copilotkit init, which already ships its own channel host. If the Slack app and Channel already exist and the question is about declaring or customising the Channel in code, use the copilotkit-channels skill instead.",
+              "description: Use for the PROVIDER half of getting a locally running CopilotKit Channels agent to answer in Slack, when no Slack app exists yet — setting up a Channels bot in Slack for the first time, creating the Slack app and its tokens, attaching it to a managed Intelligence Channel, or when a Channel reports setup_required, sits at \"Waiting for runtime\", the Channel is Online but a Slack mention gets no reply, or a Slack app was built with Socket Mode instead of an Intelligence Request URL. Scoped to an OpenTag checkout, or the OpenTag example inside a channels-sdk clone — the phases assume those conventions (app/channel.tsx, app/env.ts, INTELLIGENCE_CHANNEL_NAME, a local agent on port 8123) and do not describe a project scaffolded by copilotkit init, which already ships its own channel host. If the Slack app and Channel already exist and the question is about declaring or customising the Channel in code, use the copilotkit-channels skill instead."
+            ],
+            "category": "other",
+            "version": "1.0.0"
+          },
+          {
+            "name": "bkg-arbitration",
+            "description": "Arbitration for unresolved BKG planning, architecture, feature and risk decisions.",
+            "triggers": [],
+            "category": "other",
+            "version": "1.0.0"
+          }
+        ],
+        "review": [
+          {
+            "name": "bkg-plannotator-review",
+            "description": "Visual plan and code review workflow using the local Plannotator-compatible plan engine.",
+            "triggers": [],
+            "category": "review",
+            "version": "1.0.0"
+          }
+        ],
+        "workspace": [
+          {
+            "name": "bkg-git-safe-flow",
+            "description": "Safe status, pull, commit and push workflow.",
+            "triggers": [],
+            "category": "workspace",
+            "version": "1.0.0"
+          }
+        ],
+        "deployment": [
+          {
+            "name": "bailian-train-deploy",
+            "description": "用百炼 CLI (`bl`) 走完\"数据→微调训练→导出→部署→调用\"的完整闭环，或跳过训练直接部署基座模型。支持文本模型（SFT/DPO/CPT）、音频 TTS 模型（CosyVoice）、图像生成模型（Wan2.7）和视频生成模型（Wan i2v/kf2v）微调。涵盖数据集校验/上传、创建微调任务、等待训练、导出最佳 checkpoint、创建推理部署、等待就绪、给出调用示例。当用户提到在百炼 / DashScope / 阿里云模型工作室上\"训练模型\"\"微调\"\"fine-tune\"\"finetune\"\"部署模型\"\"模型上线\"\"把微调模型跑起来/调用\"\"训练一个推理模型\"\"继续预训练\"\"LoRA/SFT/DPO 训练\"\"语音合成模型\"\"TTS 微调\"\"CosyVoice\"\"声音克隆\"\"图像生成微调\"\"文生图\"\"图生图\"\"Wan2.7\"\"图像模型训练\"\"视频生成微调\"\"图生视频\"\"首帧生视频\"\"首尾帧\"\"kf2v\"\"i2v\"\"Wan视频\"\"视频特效训练\"等，都应激活本技能——即使用户没明说\"用 bl\"，只要意图是百炼平台的",
+            "triggers": [],
+            "category": "deployment",
+            "version": "1.0.0"
+          }
+        ]
+      }
+    },
+    "mcpServers": {
+      "servers": []
+    },
+    "plugins": {
+      "plugins": []
+    },
+    "commands": {
+      "commands": []
+    },
+    "templates": {
+      "templates": []
+    },
+    "cicd": {
+      "providers": [],
+      "pipelines": []
+    },
+    "docker": {
+      "dockerfiles": [],
+      "composeFiles": []
+    },
+    "containers": {
+      "runtime": "docker",
+      "images": []
+    },
+    "buildSystem": {
+      "type": "cargo",
+      "configFiles": [
+        "Cargo.toml"
+      ],
+      "scripts": {}
+    },
+    "testSystem": {
+      "framework": "unknown",
+      "configFiles": []
+    },
+    "documentation": {
+      "files": [
+        {
+          "path": "README.md",
+          "type": "markdown"
+        }
+      ],
+      "structure": {
+        "readme": true,
+        "contributing": false,
+        "license": false,
+        "changelog": false,
+        "apiDocs": false
+      }
+    },
+    "gitStatus": {
+      "branch": "main",
+      "commit": "unknown",
+      "clean": true,
+      "staged": [],
+      "unstaged": [],
+      "untracked": [],
+      "ahead": 0,
+      "behind": 0,
+      "remotes": []
+    }
+  },
+  "timestamp": "2026-10-07T23:47:57.225Z"
+}

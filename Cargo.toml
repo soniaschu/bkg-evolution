@@ -1,0 +1,51 @@
+[workspace]
+resolver = "3"
+members = [
+  "crates/bkgclaw-core",
+  "crates/bkgclaw-config",
+  "crates/bkgclaw-cli",
+  "crates/bkgclaw-ui",
+  "crates/bkgclaw-store",
+  "crates/bkgclaw-exec",
+  "crates/bkgclaw-gateway",
+  "crates/bkgclaw-tui",
+  "crates/bkgclaw-sandbox",
+  "crates/bkg-evolve",
+]
+
+# The web cockpit is a dx-managed WASM app: it builds with
+# `dx build` against wasm32 and never enters the native workspace
+# (its deps only compile for the browser target).
+exclude = ["crates/bkgclaw-web"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+license = "MIT"
+repository = "https://github.com/bkg/bkg-extensions"
+authors = ["BKG"]
+
+[workspace.dependencies]
+bkgclaw-core = { path = "crates/bkgclaw-core", version = "0.1.0" }
+bkgclaw-config = { path = "crates/bkgclaw-config", version = "0.1.0" }
+bkgclaw-ui = { path = "crates/bkgclaw-ui", version = "0.1.0" }
+bkgclaw-store = { path = "crates/bkgclaw-store", version = "0.1.0" }
+bkgclaw-exec = { path = "crates/bkgclaw-exec", version = "0.1.0" }
+bkgclaw-gateway = { path = "crates/bkgclaw-gateway", version = "0.1.0" }
+bkgclaw-tui = { path = "crates/bkgclaw-tui", version = "0.1.0" }
+bkgclaw-sandbox = { path = "crates/bkgclaw-sandbox", version = "0.1.0" }
+bkg-evolve = { path = "crates/bkg-evolve", version = "0.1.0" }
+
+anyhow = "1"
+clap = { version = "4", features = ["derive", "env", "wrap_help"] }
+futures-util = "0.3"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+toml = "0.9"
+
+[profile.release]
+opt-level = 2
+lto = "thin"
+strip = true

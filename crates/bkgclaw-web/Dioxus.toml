@@ -1,0 +1,10 @@
+[application]
+name = "bkgclaw-web"
+default_platform = "web"
+asset_dir = "assets"
+
+[web.app]
+title = "bkgclaw — coding cockpit"
+
+[web.wasm_opt]
+level = "s"

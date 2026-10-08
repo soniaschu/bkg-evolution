@@ -1,0 +1,18 @@
+[package]
+name = "bkg-evolve"
+description = "The self-improvement cycle: branch, let the agent work, fitness-gate by real exit codes, commit or roll back — bkgclaw evolving itself."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+
+[dependencies]
+bkgclaw-core = { workspace = true }
+bkgclaw-exec = { workspace = true }
+bkgclaw-store = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+[dev-dependencies]
+tempfile = "3"

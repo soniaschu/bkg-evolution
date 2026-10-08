@@ -1,0 +1,44 @@
+{
+  "cli_version": "0.7.10 (57d6794)",
+  "assets": {
+    "/home/workspace/bkg-projects/v1/bkgclaw/crates/bkgclaw-web/assets/style.css": [
+      {
+        "absolute_source_path": "/home/workspace/bkg-projects/v1/bkgclaw/crates/bkgclaw-web/assets/style.css",
+        "bundled_path": "style-dxh333fcd7ce1d5c46e.css",
+        "options": {
+          "add_hash": true,
+          "variant": "Unknown"
+        }
+      }
+    ],
+    "/home/workspace/bkg-projects/v1/bkgclaw/crates/bkgclaw-web/target/dx/bkgclaw-web/release/web/public/wasm/bkgclaw-web.js": [
+      {
+        "absolute_source_path": "/home/workspace/bkg-projects/v1/bkgclaw/crates/bkgclaw-web/target/dx/bkgclaw-web/release/web/public/wasm/bkgclaw-web.js",
+        "bundled_path": "bkgclaw-web-dxhf210337f6ba4a39.js",
+        "options": {
+          "add_hash": true,
+          "variant": {
+            "Js": {
+              "minify": true,
+              "preload": true,
+              "static_head": false,
+              "module": false
+            }
+          }
+        }
+      }
+    ],
+    "/home/workspace/bkg-projects/v1/bkgclaw/crates/bkgclaw-web/target/dx/bkgclaw-web/release/web/public/wasm/bkgclaw-web_bg.wasm": [
+      {
+        "absolute_source_path": "/home/workspace/bkg-projects/v1/bkgclaw/crates/bkgclaw-web/target/dx/bkgclaw-web/release/web/public/wasm/bkgclaw-web_bg.wasm",
+        "bundled_path": "bkgclaw-web_bg-dxh649e7412bff7db46.wasm",
+        "options": {
+          "add_hash": true,
+          "variant": "Unknown"
+        }
+      }
+    ]
+  },
+  "android_artifacts": [],
+  "swift_sources": []
+}

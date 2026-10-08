@@ -1,0 +1,29 @@
+[package]
+name = "bkgclaw-cli"
+description = "Command-line interface. Thin dispatch over the domain layer."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+
+[[bin]]
+name = "bkgclaw"
+path = "src/main.rs"
+
+[dependencies]
+bkgclaw-core = { workspace = true }
+bkgclaw-config = { workspace = true }
+bkgclaw-ui = { workspace = true }
+bkgclaw-store = { workspace = true }
+bkgclaw-exec = { workspace = true }
+bkgclaw-gateway = { workspace = true }
+bkg-evolve = { workspace = true }
+bkgclaw-tui = { workspace = true }
+anyhow = { workspace = true }
+async-trait = "0.1"
+clap = { workspace = true }
+serde = { workspace = true }
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+serde_json = { workspace = true }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "signal", "sync"] }
